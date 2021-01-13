@@ -14,6 +14,7 @@ public class ArrayListSample {
         ArrayList<String> friends1 = new ArrayList<>();
         friends1.add("Peter");
         friends1.add("Paul");
+        System.out.println(friends1);
 
         // 초기값 설정은 아래의 방식 외에는 없음
         ArrayList<String> friends2 = new ArrayList<>(List.of("Peter", "Paul"));
@@ -23,13 +24,13 @@ public class ArrayListSample {
         friends2.add(0, "Paul"); // 0번 인덱스 앞에 추가
 
         // 요소 접근
-        String man = friends2.get(0);
+        //String man = friends2.get(0);
 
         // 요소 변경
         friends2.set(0, "mary");
 
         // 요소의 개수
-        int size = friends2.size();
+        //int size = friends2.size();
 
         // ArrayList 복사
         System.out.println("-------------------------------");
