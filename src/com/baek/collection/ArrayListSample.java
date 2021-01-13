@@ -45,7 +45,7 @@ public class ArrayListSample {
 
         // ArrayList에서 배열로 복사
         System.out.println("-------------------------------");
-        String[] nameList = copiedArrayName.toArray(new String[copiedArrayName.size()]);
+        String[] nameList = copiedArrayName.toArray(new String[0]);
         System.out.println(Arrays.toString(nameList));
 
         // ArrayList 채우기
