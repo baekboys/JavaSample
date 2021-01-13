@@ -1,9 +1,8 @@
 package com.baek.cordingTest;
 
-import java.io.*;
-import java.util.*;
-
-import static java.util.stream.Collectors.joining;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.NoSuchElementException;
 
 
 class Result2 {
@@ -24,19 +23,19 @@ class Result2 {
         int result = 0;
 
         // 필터 범위 첫번째의 최대값 구하기
-        Integer filter1 =  filterRanges.stream()
+        int filter1 =  filterRanges.stream()
                 .mapToInt(x -> x.get(0))
                 .max().orElseThrow(NoSuchElementException::new);
 
         // 필터 범위 두번째 최소값 구하기
-        Integer filter2 =  filterRanges.stream()
+        int filter2 =  filterRanges.stream()
                 .mapToInt(x -> x.get(1))
                 .min().orElseThrow(NoSuchElementException::new);
 
         // 주파수 개수만큼 반복하여 필터 범위에 해당되면 결과값 증가
         for (Integer frequenciesList: frequencies
              ) {
-            if(frequenciesList.intValue() >= filter1.intValue() && frequenciesList.intValue() <= filter2.intValue()) {
+            if(frequenciesList >= filter1 && frequenciesList <= filter2) {
                 result++;
             }
         }
@@ -84,7 +83,7 @@ class Result2 {
         return result;
  */
 public class Solution2 {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         // 주파수
         List<Integer> input1 = new ArrayList<>();

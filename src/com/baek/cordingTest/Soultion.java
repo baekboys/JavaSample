@@ -1,10 +1,5 @@
 package com.baek.cordingTest;
 
-import java.io.*;
-
-import static java.util.stream.Collectors.joining;
-
-
 class Result {
 
     /*
@@ -18,7 +13,7 @@ class Result {
         // Write your code here
 
         // 최종 decode 문자열를 리턴할 스트링 버퍼 생성
-        StringBuffer result = new StringBuffer();
+        StringBuilder result = new StringBuilder();
 
         // encoded문자열을 역으로 뒤집기(로직 편의를 위해서...)
         String reverse = new StringBuffer(encoded).reverse().toString();
@@ -35,7 +30,7 @@ class Result {
             char temp1 = reverse.charAt(index);
 
             // 아스키코드
-            int ascii = 0;
+            int ascii;
 
             // (2) 문자를 보고 분기처리
             // (2-1) 3이면 무조건 32가 나올수 밖에 없으므로 공백처리
@@ -113,7 +108,7 @@ class Solution {
 
 
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         //String input = "23511011501782351112179911801562340161171141148"; // Truth Always Wins
         //String input = "2312179862310199501872379231018117927"; // Have a Nice Day
