@@ -2,6 +2,15 @@ package com.baek.java8to11;
 
 import java.util.function.*;
 
+/**
+ * Functional Interface란 함수를 **일급 객체로 사용할 수 없는 자바 언어의 단점을 보완하기 위해 도입되었습니다.
+ * 위 덕분에 자바는 전보다 간결한 표현이 가능해졌으며, 가독성이 높아지게 되었습니다.
+ * Functional Interface는  일반적으로 구현해야 할 추상 메서드가 하나만 정의된 인터페이스`를 가리킵니다.
+ *
+ * **일급 객체란?
+ * 일급 객체(영어: first-class object)란 다른 객체들에 일반적으로 적용 가능한 연산을 모두 지원하는 객체를 가리킨다.
+ * 보통 함수에 매개변수로 넘기기, 수정하기, 변수에 대입하기와 같은 연산을 지원할 때 일급 객체라고 한다.
+ */
 public class FunctionalInterfaceSample {
     public static void main(String[] args) {
         // ---------------------------------------------------------------
@@ -28,7 +37,7 @@ public class FunctionalInterfaceSample {
         // BiFunction<T,U,R>
         // ---------------------------------------------------------------
         // BiFunction : 2개의 타입을 받아서 1개를 리턴함, 그외에는 Function과 동일
-        BiFunction<Integer, Integer, Integer> plus = (x,y) -> x + y;
+        BiFunction<Integer, Integer, Integer> plus = Integer::sum;
         System.out.println("plus.apply(1,1) : " + plus.apply(1,1)); // 결과 : 1 + 1 = 2
 
         // ---------------------------------------------------------------
