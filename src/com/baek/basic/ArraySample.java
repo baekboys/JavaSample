@@ -10,11 +10,17 @@ public class ArraySample {
         
         // 아래는 같은 초기화 방식
         int[] primes1 = {2, 3, 5, 7, 11, 13};
-        int[] primes2 = new int[]{17, 19, 23, 29, 31};
+        int[] primes2 = new int[]{23, 17, 19, 31, 29};
 
         // 객체는 기본적으로 null로 초기화
         String[] names = new String[20];
         BigInteger[] numbers = new BigInteger[10];
+
+        // Array 정렬
+        Arrays.sort(primes2);
+        System.out.println("-------------------------------");
+        System.out.println(Arrays.toString(primes2));
+        System.out.println("-------------------------------");
 
         // 기본적인 Array 복사
         System.out.println("-------------------------------");
@@ -51,5 +57,7 @@ public class ArraySample {
 
         // 다차원배열 디버깅용 toString
         System.out.println(Arrays.deepToString(triangle));
+
+
     }
 }

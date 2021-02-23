@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
@@ -171,6 +172,29 @@ public class StreamSample {
             // 2개의 스트림을 연결
             Stream<Person> iteratedStream1to10 = Stream.concat(iteratedStream1to5, iteratedStream6to10);
             iteratedStream1to10.forEach(System.out::println);
+        }
+
+        /**************************************************************************
+         *
+         *  array에 있는 숫자를 중복제거하고 정렬하고 0 미만의 값은 제거
+         *
+         **************************************************************************/
+        {
+            System.out.println("// --------------------------------------------------------");
+            System.out.println("// array에 있는 숫자를 중복제거하고 정렬하고 0 미만의 값은 제거");
+            System.out.println("// --------------------------------------------------------");
+
+            int[] intArray = {1, 2, 5, 8, 3, 6, 3, 34, 89, 0, -1, -5, -100};
+            List<Integer> integerList = Arrays.stream(intArray)
+                    .boxed()
+                    .sorted()
+                    .distinct()
+                    .filter((i) -> {
+                        return i >= 0;
+                    })
+                    .collect(Collectors.toList());
+            System.out.println("{1, 2, 5, 8, 3, 6, 3, 34, 89, 0, -1, -5, -100}");
+            System.out.println(integerList);
         }
     }
 }
